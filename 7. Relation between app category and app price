@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+fig.set_size_inches(15, 8)
+
+# Select a few popular app categories
+popular_app_cats = apps[apps.Category.isin(['GAME', 'FAMILY', 'PHOTOGRAPHY',
+                                            'MEDICAL', 'TOOLS', 'FINANCE',
+                                            'LIFESTYLE','BUSINESS'])]
+
+# Examine the price trend by plotting Price vs Category
+ax = sns.stripplot(x = popular_app_cats['Price'], y = popular_app_cats['Category'], jitter=True, linewidth=1)
+ax.set_title('App pricing trend across categories')
+
+# Apps whose Price is greater than 200
+apps_above_200 = popular_app_cats[popular_app_cats['Price'] > 200]
+apps_above_200[['Category', 'App', 'Price']]
