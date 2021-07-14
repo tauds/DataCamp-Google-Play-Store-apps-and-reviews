@@ -7,4 +7,4 @@ apps['Installs'] = apps['Installs'].astype(float)
 apps['Price'] = apps['Price'].astype(float)
 
 # Checking dtypes of the apps dataframe
-print(...)
+print(apps.info())
